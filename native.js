@@ -3,7 +3,9 @@ let native
 try {
   native = require('./prebuilds/x64.node')
 } catch (e) {
-  native = require('./native/index.node')
+  if (typeof __non_webpack_require__ === 'undefined') {
+    native = require('./native/index.node')
+  }
 }
 
 module.exports = native
