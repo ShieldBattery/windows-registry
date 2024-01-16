@@ -3,9 +3,10 @@ let native
 try {
   native = require('./prebuilds/x64.node')
 } catch (e) {
-  if (typeof __non_webpack_require__ === 'undefined') {
-    native = require('./native/index.node')
-  }
+  // Workaround to fix webpack's build warnings: 'the request of a dependency is an expression'
+  const runtimeRequire =
+    typeof __webpack_require__ === 'function' ? __non_webpack_require__ : require
+  native = runtimeRequire('./native/index.node')
 }
 
 module.exports = native
