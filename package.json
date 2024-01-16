@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cd native && cargo-cp-artifact -nc index.node -- cargo build --target=x86_64-pc-windows-msvc --message-format=json-render-diagnostics",
     "build-debug": "pnpm run build --",
-    "build-release": "pnpm run build -- --release",
+    "build-release": "pnpm run build --release",
     "tag-prebuild": "node ./tag-prebuild.js",
     "test": "cd native && cargo test && cd .. && pnpm run build && node --test"
   },
