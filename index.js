@@ -44,5 +44,6 @@ module.exports = {
   REG_QWORD: 'REG_QWORD',
   REG_BINARY: 'REG_BINARY',
 
+  /** The name of the default value within a key. */
   DEFAULT_VALUE: '',
 }

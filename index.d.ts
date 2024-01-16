@@ -21,6 +21,9 @@ export class WindowsRegistry {
   ): Promise<void>
 }
 
+/** The name of the default value within a key. */
+export const DEFAULT_VALUE = ''
+
 export const HKCU = 'HKEY_CURRENT_USER'
 export const HKLM = 'HKEY_LOCAL_MACHINE'
 export const HKCR = 'HKEY_CLASSES_ROOT'
