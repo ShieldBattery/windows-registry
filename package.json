@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "A Rust/neon-based node.js native module for accessing and modifying the Windows registry.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "cd native && cargo-cp-artifact -nc index.node -- cargo build --target=x86_64-pc-windows-msvc --message-format=json-render-diagnostics",
-    "build-debug": "npm run build --",
-    "build-release": "npm run build -- --release",
+    "build-debug": "pnpm run build --",
+    "build-release": "pnpm run build -- --release",
     "tag-prebuild": "node ./tag-prebuild.js",
-    "test": "cd native && cargo test"
+    "test": "cd native && cargo test && cd .. && pnpm run build && node --test"
   },
   "keywords": [
     "windows",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/ShieldBattery/windows-registry#readme",
   "devDependencies": {
     "cargo-cp-artifact": "^0.1.8",
-    "neon-tag-prebuild": "^1.1.1"
+    "neon-tag-prebuild": "^1.1.1",
+    "prettier": "^3.2.2"
   }
 }

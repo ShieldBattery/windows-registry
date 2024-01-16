@@ -1,5 +1,5 @@
 [package]
-name = "native"
+name = "windows-registry"
 version = "0.1.0"
 description = "A Rust/neon-based node.js native module for accessing and modifying the Windows registry."
 license = "MIT"
@@ -11,8 +11,10 @@ crate-type = ["cdylib"]
 
 [dependencies]
 anyhow = "1.0"
+registry = "1.2"
+utfx = "0.1"
 
 [dependencies.neon]
 version = "0.10"
 default-features = false
-features = ["napi-6", "promise-api", "channel-api"]
+features = ["napi-6", "channel-api", "promise-api", "try-catch-api"]
