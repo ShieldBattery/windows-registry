@@ -129,8 +129,10 @@ impl RegistryThread {
                     Data::U32(n) => Ok(cx.number(n as f64).upcast()),
                     Data::U64(n) => Ok(cx.number(n as f64).upcast()),
                     Data::Binary(b) => {
-                        let typed_array = JsBuffer::external(&mut cx, b);
-                        Ok(typed_array.upcast())
+                        let mut buffer = JsBuffer::new(&mut cx, b.len())?;
+                        let buffer_data = buffer.as_mut_slice(&mut cx);
+                        buffer_data.copy_from_slice(&b);
+                        Ok(buffer.upcast())
                     }
                     t => cx.throw_error(format!("Unsupported registry type: {}", t)),
                 },
