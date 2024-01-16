@@ -1,6 +1,6 @@
 {
   "name": "@shieldbattery/windows-registry",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Rust/neon-based node.js native module for accessing and modifying the Windows registry.",
   "main": "index.js",
   "types": "index.d.ts",
