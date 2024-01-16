@@ -195,9 +195,7 @@ impl RegistryThread {
             "REG_DWORD" => Ok(Data::U32(cx.argument::<JsNumber>(4)?.value(&mut cx) as u32)),
             "REG_QWORD" => Ok(Data::U64(cx.argument::<JsNumber>(4)?.value(&mut cx) as u64)),
             "REG_BINARY" => Ok(Data::Binary(
-                cx.argument::<JsTypedArray<u8>>(4)?
-                    .as_slice(&mut cx)
-                    .to_vec(),
+                cx.argument::<JsTypedArray<u8>>(4)?.as_slice(&cx).to_vec(),
             )),
             _ => Err(cx.throw_error(format!("Invalid registry type: {}", type_name))?),
         }?;
