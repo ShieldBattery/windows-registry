@@ -8,9 +8,6 @@ devDependencies:
   cargo-cp-artifact:
     specifier: ^0.1.8
     version: 0.1.8
-  neon-tag-prebuild:
-    specifier: ^1.1.1
-    version: 1.1.1
   prettier:
     specifier: ^3.2.2
     version: 3.2.2
@@ -22,33 +19,8 @@ packages:
     hasBin: true
     dev: true
 
-  /mkdirp@1.0.4:
-    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: true
-
-  /neon-tag-prebuild@1.1.1:
-    resolution: {integrity: sha512-uZlQlOAMl4XlR98rbp1Y0JlvP3phJ5X6qfdinEhvI+HFHVieaE5cPk2k38u7LCbcVyYcVmMac3yW5YS+wES3DQ==}
-    hasBin: true
-    dependencies:
-      mkdirp: 1.0.4
-      node-abi: 2.30.1
-    dev: true
-
-  /node-abi@2.30.1:
-    resolution: {integrity: sha512-/2D0wOQPgaUWzVSVgRMx+trKJRC2UG4SUc4oCJoXx9Uxjtp0Vy3/kt7zcbxHF8+Z/pK3UloLWzBISg72brfy1w==}
-    dependencies:
-      semver: 5.7.2
-    dev: true
-
   /prettier@3.2.2:
     resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
     engines: {node: '>=14'}
-    hasBin: true
-    dev: true
-
-  /semver@5.7.2:
-    resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
     dev: true
