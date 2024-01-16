@@ -28,8 +28,6 @@ impl RegistryThread {
     {
         let (tx, rx) = mpsc::channel::<RegistryMessage>();
 
-        // FIXME: open registry?
-
         let channel = cx.channel();
 
         thread::spawn(move || {

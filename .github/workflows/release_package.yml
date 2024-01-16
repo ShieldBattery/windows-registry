@@ -42,7 +42,7 @@ jobs:
           NEW_VERSION: ${{ github.event.inputs.release-version }}
 
       - name: Compile .node
-        run: pnpm run build-release
+        run: pnpm run build-debug
 
       - name: Sign binary
         env:
